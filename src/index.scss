@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=IBM+Plex+Sans:wght@300;400&family=Poppins:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  --creme-color: #fff4e6;
+  --purple-color: #372b37;
+  --greenish-color: #2b4743;
+  --yellowish-color: goldenrod;
+  --pinkish-color: #ffd3db;
+  --reddish-color: #8c3839;
+  --grey-color: #333;
+  --cremish-color: #fff4d7;
+  --whitish-color: #fbfbfb;
+
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+}
