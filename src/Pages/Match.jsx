@@ -48,7 +48,7 @@ const Match = () => {
   // SEARCHING BOOK WITH OPEN AI
   const searchBookAIs = async (keywords) => {
     const response = await fetch(
-      `https://booktwin-3ec23f381e74.herokuapp.com?word=${keywords}`
+      `https://booktwin-back-897fa919ad5d.herokuapp.com?word=${keywords}`
       // {
       //   method: "POST",
       //   headers: {
@@ -76,7 +76,7 @@ const Match = () => {
 
   const searchBooks = async (titleword) => {
     const response = await fetch(
-      `https://booktwin-3ec23f381e74.herokuapp.com?word=${titleword}`
+      `https://booktwin-back-897fa919ad5d.herokuapp.com?word=${titleword}`
       // {
       //   method: "POST",
       //   headers: {
