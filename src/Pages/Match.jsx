@@ -45,27 +45,20 @@ const Match = () => {
     setsearchTerm("");
   };
 
-  const OPENAI_API_KEY = "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";
   // SEARCHING BOOK WITH OPEN AI
   const searchBookAIs = async (keywords) => {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        // prompt: `find a book with ${keywords}`,
-        messages: [
-          {
-            role: "user",
-            content: `find a book with ${keywords} in its title`,
-          },
-        ],
-        // max_tokens: 20,
-      }),
-    });
+    const response = await fetch(
+      `https://booktwin-3ec23f381e74.herokuapp.com?word=${keywords}`
+      // {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     keywords: `${keywords}`,
+      //   }),
+      // }
+    );
 
     const data = await response.json();
 
@@ -75,16 +68,25 @@ const Match = () => {
     //   data.choices[0].text.lastIndexOf('"') + 1
     // );
 
-    const newData = data.choices[0].message.content;
     //console.log(newData);
-    searchBooks(newData);
+    searchBooks(data);
   };
 
   //SEARCHING BOOK WITH GOOGLE API
 
   const searchBooks = async (titleword) => {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${titleword}&key=AIzaSyBBYLKNv26Q6oG_V5QxQtU-l88EBtf5x68`
+      `https://booktwin-3ec23f381e74.herokuapp.com?word=${titleword}`
+      // {
+      //   method: "POST",
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     titleword: `${titleword}`,
+      //   }),
+      // }
     );
     const data = await response.json();
 
