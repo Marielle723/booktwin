@@ -101,12 +101,26 @@
       margin-top: 2vh;
       margin-bottom: 2vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
 
       div img {
         width: 100%;
         object-fit: contain;
+      }
+
+      .more {
+        font-size: 0.5rem;
+      }
+
+      .book-more {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        font-size: 0.5rem;
+        background-color: var(--whitish-color);
+        color: var(--greenish-color);
       }
     }
   }

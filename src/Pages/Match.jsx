@@ -19,6 +19,7 @@ const Match = () => {
   const [nextBook, setNextBook] = useState(0);
   const [matchmessage, setMatchmessage] = useState("");
   const [close, setClose] = useState(false);
+  const [more, setMore] = useState(false);
 
   //functions
 
@@ -136,13 +137,33 @@ const Match = () => {
           YES
         </button>
         {books.items?.length > 0 ? (
-          <div className="bookCards-container">
-            {books.items.map(
-              (book, index) =>
-                close === false &&
-                index === nextBook && <BookCard key={index} book={book} />
-            )}
-          </div>
+          more === false ? (
+            <div className="bookCards-container">
+              {books.items.map(
+                (book, index) =>
+                  close === false &&
+                  index === nextBook && (
+                    <BookCard key={index} book={book} more={more} />
+                  )
+              )}
+              <button className="more" onClick={() => setMore(true)}>
+                More about it
+              </button>
+            </div>
+          ) : (
+            <div className="bookCards-container">
+              {books.items.map(
+                (book, index) =>
+                  close === false &&
+                  index === nextBook && (
+                    <BookCard key={index} book={book} more={more} />
+                  )
+              )}
+              <button className="more" onClick={() => setMore(false)}>
+                Return to cover
+              </button>
+            </div>
+          )
         ) : (
           <div className="empty">
             {books.items?.length === 0 && (
