@@ -146,9 +146,11 @@ const Match = () => {
                     <BookCard key={index} book={book} more={more} />
                   )
               )}
-              <button className="more" onClick={() => setMore(true)}>
-                More about it
-              </button>
+              {close === false && (
+                <button className="more" onClick={() => setMore(true)}>
+                  More about it
+                </button>
+              )}
             </div>
           ) : (
             <div className="bookCards-container">
