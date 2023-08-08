@@ -147,7 +147,7 @@ const Match = () => {
                   )
               )}
               {close === false && (
-                <button className="more" onClick={() => setMore(true)}>
+                <button className="btn-more" onClick={() => setMore(true)}>
                   More about it
                 </button>
               )}
@@ -161,7 +161,7 @@ const Match = () => {
                     <BookCard key={index} book={book} more={more} />
                   )
               )}
-              <button className="more" onClick={() => setMore(false)}>
+              <button className="btn-more" onClick={() => setMore(false)}>
                 Return to cover
               </button>
             </div>
@@ -181,11 +181,13 @@ const Match = () => {
       <br />
 
       {close === false && matchmessage !== "" && (
-        <img
-          className="match-message"
-          src={matchIcon}
-          alt="pink spice with message it's a match"
-        />
+        <>
+          <img
+            className="match-message"
+            src={matchIcon}
+            alt="pink spice with message it's a match"
+          />
+        </>
       )}
     </div>
   );
