@@ -1,5 +1,6 @@
 .match-container {
   background-color: var(--grey-color);
+
   height: 60vh;
   margin-top: 20vh;
   display: flex;
@@ -23,7 +24,8 @@
     h1 {
       text-align: center;
       color: var(--whitish-color);
-      font-size: 1.2rem;
+      font-size: 1.6rem;
+      font-family: "Shadows Into Light", cursive;
     }
 
     .close-icon {
